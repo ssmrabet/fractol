@@ -1,6 +1,4 @@
-# fractol
-Note : 
+# fractol - ECOLE 42
+# Note : 
 
-#ECOLE 42
-
-#By: smrabet souhir.mrabet@gmail.com
+# By: smrabet souhir.mrabet@gmail.com
