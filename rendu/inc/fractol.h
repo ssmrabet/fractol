@@ -6,7 +6,7 @@
 /*   By: smrabet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 15:48:30 by smrabet           #+#    #+#             */
-/*   Updated: 2016/11/27 15:53:56 by smrabet          ###   ########.fr       */
+/*   Updated: 2016/11/27 18:24:01 by smrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void				fractale_man4(t_env *e, float tmp, float rz, float iz);
 void				fractale_bship(t_env *e);
 void				fractale_jul(t_env *e);
 void				fractale_tricorn(t_env *e);
-void				fractale_mandelbar4(t_env *e, float tmp, float rz, float iz);
+void				fractale_mandelbar4(t_env *e, float tmp,
+		float rz, float iz);
 
 #endif

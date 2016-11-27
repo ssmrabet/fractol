@@ -6,16 +6,16 @@
 /*   By: smrabet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 18:05:13 by smrabet           #+#    #+#             */
-/*   Updated: 2016/11/27 15:47:03 by smrabet          ###   ########.fr       */
+/*   Updated: 2016/11/27 18:23:13 by smrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	fractale_mandelbar4(t_env *e, float tmp, float rz, float iz)
+void			fractale_mandelbar4(t_env *e, float tmp, float rz, float iz)
 {
 	e->x = -1;
-	while					(++e->x < X)
+	while (++e->x < X)
 	{
 		e->y = 0;
 		while (++e->y < Y)
