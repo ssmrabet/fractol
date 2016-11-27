@@ -6,7 +6,7 @@
 /*   By: smrabet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 18:05:13 by smrabet           #+#    #+#             */
-/*   Updated: 2016/10/28 17:08:35 by smrabet          ###   ########.fr       */
+/*   Updated: 2016/11/27 17:57:51 by smrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,10 @@ static float	calcul(t_env *e, float tmp)
 	rz = e->rz * e->rz;
 	iz = e->iz * e->iz;
 	x = rz - iz;
+	tmp = 3.0 * (x * x + 4.0 * rz * iz);
 	if (tmp == 0.0)
 		tmp = 0.000001;
-	tmp = 3.0 * (x * x + 4.0 * rz * iz);
-	e->rz = (2.0 / 3.0) * e->rz + x / tmp;
+	e->rz = (2.0 / 3.0) * r + x / tmp;
 	e->iz = (2.0 / 3.0) * e->iz - 2.0 * r * e->iz / tmp;
 	return (tmp);
 }
@@ -122,7 +122,7 @@ void			fractale_newton(t_env *e, float r, float tmp)
 			e->iz = e->y / e->zoom + e->y1;
 			e->a = -1;
 			tmp = 1;
-			while (++e->a < e->i && tmp > 0.000001)
+			while (++e->a < e->i)
 				tmp = calcul(e, tmp);
 			put_pixel_color(e->x, e->y, e);
 		}

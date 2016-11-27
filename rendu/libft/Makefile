@@ -6,7 +6,7 @@
 #    By: smrabet <smrabet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/31 00:21:15 by smrabet           #+#    #+#              #
-#    Updated: 2016/10/09 16:14:12 by smrabet          ###   ########.fr        #
+#    Updated: 2016/11/27 13:51:09 by smrabet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,14 +91,11 @@ $(NAME):
 	@$(CC) $(CFLAG) $(SRC_NAME)
 	@$(AR) $(NAME) $(OBJ_NAME)
 	@$(RLIB) $(NAME)
-	@echo "\033[0;33;32mmake LIBFT"
 
 clean:
 	@$(RM) $(OBJ_NAME)
-	@echo "\033[1;33;40mclean LIBFT"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\033[1;31;40mfclean LIBFT"
 
 re: fclean all

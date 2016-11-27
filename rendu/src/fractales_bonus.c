@@ -6,30 +6,32 @@
 /*   By: smrabet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/22 18:05:13 by smrabet           #+#    #+#             */
-/*   Updated: 2016/10/28 17:09:01 by smrabet          ###   ########.fr       */
+/*   Updated: 2016/11/27 15:47:03 by smrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void			fractale_chamelon(t_env *e)
+void	fractale_mandelbar4(t_env *e, float tmp, float rz, float iz)
 {
-	float		tmp;
-
 	e->x = -1;
-	while (++e->x < X)
+	while					(++e->x < X)
 	{
 		e->y = 0;
 		while (++e->y < Y)
 		{
-			e->rz = e->x / e->zoom + e->x1;
-			e->iz = e->y / e->zoom + e->y1;
+			e->rc = e->x / e->zoom + e->x1;
+			e->ic = e->y / e->zoom + e->y1;
+			e->rz = 0;
+			e->iz = 0;
 			e->a = 0;
-			while (e->a < 100 && e->rz * e->rz + e->iz * e->iz < 4)
+			while (e->a < e->i && e->rz * e->rz + e->iz * e->iz < 4)
 			{
 				tmp = e->rz;
-				e->rz = e->rz * e->rz - e->iz * e->iz + e->rc;
-				e->iz = -2 * e->iz * tmp + e->ic;
+				iz = e->iz * e->iz;
+				rz = e->rz * e->rz;
+				e->rz = rz * e->rz - 3 * e->rz * iz + e->rc;
+				e->iz = -(3 * rz * e->iz - iz * e->iz) + e->ic;
 				e->a++;
 			}
 			put_pixel(e->x, e->y, e);
@@ -56,7 +58,7 @@ void			fractale_tricorn(t_env *e)
 			{
 				tmp = e->rz;
 				e->rz = e->rz * e->rz - e->iz * e->iz + e->rc;
-				e->iz = -2 * e->iz * tmp + e->ic;
+				e->iz = -(2 * e->iz * tmp) + e->ic;
 				e->a++;
 			}
 			put_pixel(e->x, e->y, e);

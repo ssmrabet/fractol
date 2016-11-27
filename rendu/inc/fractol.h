@@ -6,7 +6,7 @@
 /*   By: smrabet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 15:48:30 by smrabet           #+#    #+#             */
-/*   Updated: 2016/10/28 18:09:48 by smrabet          ###   ########.fr       */
+/*   Updated: 2016/11/27 15:53:56 by smrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 # define Y 400
 # define X 400
 # define ESC 53
-# define ITERATION 83
+# define P_ITERATION 83
+# define N_ITERATION 86
 # define RESET 84
 # define CHANGE 85
 # define BLOC 85
@@ -39,6 +40,7 @@
 typedef struct		s_env
 {
 	int				c[X][Y];
+	int				color;
 	int				fract;
 	int				bloc;
 	void			*mlx;
@@ -78,6 +80,8 @@ typedef struct		s_slice
 void				put_pixel(int x, int y, t_env *e);
 void				put_pixel_color(int x, int y, t_env *e);
 void				init_val(t_env *e);
+void				change(t_env *e);
+void				menu(t_env *e);
 
 int					key(int key, t_env *e);
 int					mouse_change(int x, int y, t_env *e);
@@ -90,11 +94,13 @@ void				fractale_function(t_env *e);
 void				fractale_newton(t_env *e, float r, float tmp);
 void				fractale_newton_love(t_env *e, float r, float tmp);
 
+void				fractale_neg(t_env *e);
 void				fractale_man(t_env *e);
+void				fractale_man2(t_env *e, float tmp, float rz, float iz);
 void				fractale_man4(t_env *e, float tmp, float rz, float iz);
 void				fractale_bship(t_env *e);
 void				fractale_jul(t_env *e);
-void				fractale_chamelon(t_env *e);
 void				fractale_tricorn(t_env *e);
+void				fractale_mandelbar4(t_env *e, float tmp, float rz, float iz);
 
 #endif
