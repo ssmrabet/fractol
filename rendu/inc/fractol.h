@@ -6,7 +6,7 @@
 /*   By: smrabet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 15:48:30 by smrabet           #+#    #+#             */
-/*   Updated: 2016/11/27 18:24:01 by smrabet          ###   ########.fr       */
+/*   Updated: 2016/12/06 10:47:50 by smrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@
 
 typedef struct		s_env
 {
-	int				c[X][Y];
 	int				color;
 	int				fract;
 	int				bloc;
@@ -67,16 +66,6 @@ typedef struct		s_env
 	int				i;
 }					t_env;
 
-typedef struct		s_slice
-{
-	int				x;
-	int				y;
-	int				x_max;
-	int				y_max;
-	pthread_t		th;
-	t_env			*e;
-}					t_slice;
-
 void				put_pixel(int x, int y, t_env *e);
 void				put_pixel_color(int x, int y, t_env *e);
 void				init_val(t_env *e);
@@ -102,6 +91,6 @@ void				fractale_bship(t_env *e);
 void				fractale_jul(t_env *e);
 void				fractale_tricorn(t_env *e);
 void				fractale_mandelbar4(t_env *e, float tmp,
-		float rz, float iz);
+					float rz, float iz);
 
 #endif
